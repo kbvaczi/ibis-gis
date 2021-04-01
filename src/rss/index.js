@@ -18,7 +18,7 @@ export default async function(basin, example) {
   if (!items.length) {
     console.log(`Only one item found in feed: "${items.title}"`)
     console.log('Exiting...');
-    process.exit();
+    throw new Error('Only one item found in feed');
   }
 
   let shps = items.filter(d => d.title.includes('[shp]'));

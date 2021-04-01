@@ -41,7 +41,7 @@ function _ref() {
             if (!items.length) {
               console.log("Only one item found in feed: \"".concat(items.title, "\""));
               console.log('Exiting...');
-              process.exit();
+              throw new Error('Only one item found in feed');
             }
 
             shps = items.filter(function (d) {
